@@ -1,0 +1,13 @@
+name: FemiacultureMobile
+title: FemiacultureMobile
+username:
+account: femiaculture
+server: shinyapps.io
+hostUrl: https://api.shinyapps.io/v1
+appId: 9162136
+bundleId: 7249076
+url: https://femiaculture.shinyapps.io/FemiacultureMobile/
+when: 1684777007.51772
+lastSyncTime: 1684777007.51773
+asMultiple: FALSE
+asStatic: FALSE

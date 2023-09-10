@@ -34,6 +34,7 @@ ui <- dashboardPage(skin =  "purple",
                                  menuSubItem("Empowerment", tabName = "Empowerment", icon = icon("venus",class =NULL, lib="font-awesome" )),
                                  menuSubItem("Risk", tabName = "Risk", icon = icon("exclamation-triangle",class =NULL, lib="font-awesome" )),
                                  menuSubItem("Resources", tabName = "Resources", icon = icon("seedling",class =NULL, lib="font-awesome" )),
+                                 menuSubItem("Calculations", tabName = "Calculations", icon = icon("bar-chart-o",class =NULL, lib="font-awesome" )),
                                  menuSubItem("Impressum", tabName = "Impressum", icon = icon("star",class =NULL, lib="font-awesome" ))
                                  # You can change the order of the 'tabItems' above here. The order within the rest of the code has no impact.
                         ))
@@ -54,6 +55,9 @@ ui <- dashboardPage(skin =  "purple",
                                     title = "Femiaculture", status = "primary",solidHeader = TRUE, collapside = TRUE,
                                     width = 5, 
                                     tags$strong("Welcome To Femiaculture by Alexandra Krause", style = "font-size:20px;"),
+                                    p(),
+                                    #p("For the mobile phone version, please click here:",
+                                    #  tags$a(href="https://femiaculture.shinyapps.io/FemiacultureMobile/", "https://femiaculture.shinyapps.io/FemiacultureMobile/ .", style = "color: purple;")),
                                     p("I build this website focusing on factors influencing rural
                                     farm-women's empowerment. Later, I applied the Decision Analysis methodology.
                                     To understand the underlying empowerment system, I conducted
@@ -62,20 +66,19 @@ ui <- dashboardPage(skin =  "purple",
                                     I conducted (see the  \"Methodology\"-section)
                                     a generalized statistical model, suggesting it as a 
                                     measurement technique of the researched factors. See",
-                                    tags$a(href="https://github.com/AlexandraKrause/DA-Code_Femiaculture", "https://github.com/AlexandraKrause/DA-Code_Femiaculture"),
-                                    "for further information."),
+                                      tags$a(href="https://github.com/AlexandraKrause/DA-Code_Femiaculture", "https://github.com/AlexandraKrause/DA-Code_Femiaculture"),
+                                      "for further information."),
                                     p("
                                       So, by using the sliders in the upper part of this page, researchers can use the model for their own case studies.
                                       Decision Analysis also bears the possibility for actual change in the form of information for farm women.
                                       By using Shiny apps like these, online information systems can be developed also for them.
-                                      Therefore, researchers need to adapt the model to local situations by using the sliders
-                                      and sometimes change the website's code to 
-                                      rural women's user needs."),
+                                      Researchers can also decide to change the website's code to rural women's user needs and provide the app to them. 
+                                      "),
                                     p("Please try it out yourself: You see the initial graph left on the page - if you changed the values on the slider, 
-                                      you see the chart changing (if not, please reload the page).
+                                      you see the chart slowly changing.
                                       So, what should a farm women decide to do? 
                                       Should she empower herself or choose not to change her status quo situation?
-                                      Please use the slider and see how the graph changes: Focus on the x-axis, which shows the monetary range
+                                      Please use the sliders below and see how the graph changes: Focus on the x-axis, which shows the monetary range
                                       farm women can expect for either option. Depending on the amount of money the farm woman could earn,
                                       she should decide on either the one or the other option. 
                                       Also, the decision is influenced by the costs of the influencing factors like education, the outcome benefits like
@@ -85,7 +88,8 @@ ui <- dashboardPage(skin =  "purple",
                                       coincidences are also calculated, the visual might look a bit different each time you use the application.
                                       Beneath the sliders and the text, a table also shows the current values."),
                                     p("To find out more, please click on \"The Project\" and read the following texts on this website.
-                                      Down on this page further calculations like a cashflow can be done."),
+                                      Down on this page further calculations like a cashflow can be done.
+                                      Find further information about these in the calculations-section."),
                                     div(
                                       # use HTML by wrapping it with this function. 
                                       # Use a bootstrap or Font Awesome icons 
@@ -252,7 +256,7 @@ ui <- dashboardPage(skin =  "purple",
                                          tags$strong("The Impact Pathway For Empowerment Based On An Economic Assessment."),
                                          tags$p(" To  conduct a model an impact pathway like the following is needed, comparing two options with each other."),
                                          img(src = "impact_pathway1.png",
-                                             width="70%"
+                                             width="100%"
                                              #"1000"
                                          )
                                          # insert image :) src stands for source, url is ok. 
@@ -339,14 +343,14 @@ ui <- dashboardPage(skin =  "purple",
                                   width = 12,align ="center",
                                   column(10, offset = 1,
                                          img(src = "impact_pathway-status-quo.png",
-                                             width="70%"
+                                             width="100%"
                                              #1000"
                                          ))),
                                   box(
-                                    title = "", status = "primary",solidHeader = TRUE, collapside = TRUE,
+                                    title = "Model in Detail: Sticking To Status Quo", status = "primary",solidHeader = TRUE, collapside = TRUE,
                                     width = 12,
-                                    tags$strong("Model in Detail: Sticking To Status Quo"),
-                                    tags$br(p("After coding the model, I further developed this more
+                                    #tags$strong("Model in Detail: Sticking To Status Quo"),
+                                    p("After coding the model, I further developed this more
                                               detailed figure. This pathway is divided into investments
                                               (green) and payoffs (red). The option of sticking to the status
                                               quo leads down a path of losses. Empowerment can be compared to
@@ -362,7 +366,7 @@ ui <- dashboardPage(skin =  "purple",
                                               be allowed to gather a little income by selling small amounts
                                               of farm goods. On the one hand, the economic value might be minimal,
                                               and on the other, women might not be able to spend it on their own
-                                              needs but only on their families.")))),
+                                              needs but only on their families."))),
                                 tags$a(href="http://inresgb-lehre.iaas.uni-bonn.de/impressum/", "Impressum", style = "font-size:15px;",style = "color: black;")
                         ),
                         
@@ -374,12 +378,12 @@ ui <- dashboardPage(skin =  "purple",
                                   width = 12, align ="center",
                                   column(10, offset = 1,
                                          img(src = "impact pathway-emp-pathway.png",
-                                             width="70%"
+                                             width="100%"
                                          ))),
                                   box(
-                                    title = "", status = "primary",solidHeader = TRUE, collapside = TRUE,
+                                    title = "Model in Detail: Changing Status Quo", status = "primary",solidHeader = TRUE, collapside = TRUE,
                                     width = 12,
-                                    tags$strong("Model in Detail: Changing Status Quo"),
+                                    #tags$strong("Model in Detail: Changing Status Quo"),
                                     p("Like a ladder, the situation might only be changed stepwise. Therefore,
                                     the Empowerment pathway might contain more or less economically beneficial options 
                                     depending on what is possible for the woman in her situation.
@@ -401,12 +405,12 @@ ui <- dashboardPage(skin =  "purple",
                                   width = 12, align ="center",
                                   column(10, offset = 1,
                                          img(src = "riskmap.png",
-                                             width="30%"
+                                             width="100%"
                                              ))),
                                   box(
-                                    title = "", status = "primary",solidHeader = TRUE, collapside = TRUE,
+                                    title = "The Social Environmnet", status = "primary",solidHeader = TRUE, collapside = TRUE,
                                     width = 12,
-                                    tags$code("The Social Environmnet"),
+                                    #tags$code("The Social Environmnet"),
                                     p("A complex social environment in which complex behavior towards women is accepted or praised and victims are blamed,
                                     or strong backlash exists, can also strengthen problematic inner-household dynamics and masculinities. These can lead as well
                                     as the challenging behavior itself to safety issues. Safety issues have a negative effect on mental and physical health.
@@ -427,9 +431,9 @@ ui <- dashboardPage(skin =  "purple",
                                          tags$p("The pathway is the result of literature analysis.
                                                  Minuses and pluses show a positive or negative impact of a factor."),
                                                  tags$p("The numbers stand for sources. 
-                                                 Find the excel literature sources table that connects the source numbers to further source information here:", 
-                                                (tags$a(href="https://github.com/AlexandraKrause/Thesis/blob/main/methods-excel.xlsx", "https://github.com/AlexandraKrause/Thesis/blob/main/methods-excel.xlsx")),
-                                                tags$p("And find statistics regarding the literature review here:",
+                                                 #Find the excel literature sources table that connects the source numbers to further source information here:", 
+                                                #(tags$a(href="https://github.com/AlexandraKrause/Thesis/blob/main/methods-excel.xlsx", "https://github.com/AlexandraKrause/Thesis/blob/main/methods-excel.xlsx")),
+                                                tags$p("Please find statistics regarding the literature review here:",
                                                        tags$a(href="https://github.com/AlexandraKrause/Thesis#readme", "https://github.com/AlexandraKrause/Thesis#readme"))),
                                          
                                          tags$hr(),
@@ -446,19 +450,61 @@ ui <- dashboardPage(skin =  "purple",
                                   width = 12, align ="center",
                                   column(10, offset = 1,
                                          img(src = "Empowernment_mindmap-resources.png",
-                                             width="60%"
+                                             width="100%"
                                                #"1000" 
                                              #height="516"
                                          ))),
                                   box(
-                                    title = "", status = "primary",solidHeader = TRUE, collapside = TRUE,
+                                    title = "Resources To Input Into The Model", status = "primary",solidHeader = TRUE, collapside = TRUE,
                                     width = 12,
-                                    tags$code("Resources To Input Into The Model"),
+                                    #tags$code("Resources To Input Into The Model"),
                                     p("This mind map shows, which resources could be usefull for the \"Resources\" part of the model depending on the research
                                        goal and the local condition. Information technologies like mobile phones can also be part of \"Education/Training\" calculations."
                                     ))),
                                 tags$a(href="http://inresgb-lehre.iaas.uni-bonn.de/impressum/", "Impressum", style = "font-size:15px;",style = "color: black;")
                         ),
+                        tabItem(tabName = "Calculations",
+                                h3("Calculations"),
+                                fluidRow(box(
+                                  title = "", status = "primary",solidHeader = TRUE, collapside = TRUE,
+                                  width = 12, align ="left",
+                                  column(10, offset = 1,
+                                         tags$figure(
+                                           class = "centerFigure",
+                                           tags$img(src = "PLS.png", align ="left",
+                                                    width="100%")),
+                                         tags$figure(
+                                           class = "centerFigure",
+                                           tags$img(src = "Cashflow.png", align ="right",
+                                                    width="100%"
+                                           )))),
+                                  box(
+                                    title = "Calculations", status = "primary",solidHeader = TRUE, collapside = TRUE,
+                                    width = 12,
+                                    #tags$code("Calculations"),
+                                    p("The app provides avrious calculatations, which I will explain in detail. 
+                                      The app gerenates a monte carlo simulation, a random sampling method, with 10000  model runs.
+                                      Next to the Net present Value, the NPV, reserachers can generate a cashflow,
+                                      run a Value of information analysis (VIA) or (VoI).
+                                      The cashflow plot shows the time structure of investments and payouts,
+                                      visualizing when arural farm woman can expect monetary outcomes.
+                                      The VoI includes every variable in the model.
+                                      Such value of Information analysis could also show which values a researcher should further
+                                      research in detail (Hubbard, 2014; Luedeling & Shepherd, 2016; Whitney et al., 2018).
+                                      Then, the output showes the information values for all these variables (Hubbard, 2014).
+                                      I set the threshold to 0.8 to differentiate between important and less important values.
+                                      This threshold can be adapted within the code structure.
+                                      The Variable Importance gives additional information on a variable to receive more certainty
+                                      of the decision, which is most profitable. The plot shows the sensitivity of outcomes to variables.
+                                      For those variables with a high information value, further measurements could take place to lower uncertainties.
+                                      Thresholds show the point at which decision differences might occur (Hubbard, 2014)."
+                                    ),
+                                    p("Find the code here:", tags$a(href="https://github.com/AlexandraKrause/DA-Code_Femiaculture", "https://github.com/AlexandraKrause/DA-Code_Femiaculture", style ="color:purple;")),
+                                    tags$br(p("Hubbard, D. W. (2014). How To Measure Anything: Finding the Value of Intangibles in Business: Bd. Second Edition (2. Aufl.). John Wiley & Sons."),
+                                            p("Luedeling, E., & Shepherd, K. (2016). Decision-Focused Agricultural Research. Solutions, 7(5), 46–54. https://www.thesolutionsjournal.com/article/decision-focused-agricultural-research/"),
+                                            p("Whitney, C., Luedeling, E., & Shepherd, K. (2018). Decision Analysis Methods Guide; Agricultural Policy for Nutrition. World Agroforestry (ICRAF), Working Paper series(275), 40.")),
+                                    tags$a(href="http://inresgb-lehre.iaas.uni-bonn.de/impressum/", "Impressum", style = "font-size:15px;",style = "color: black;")
+                                  ))),
                         # size 700 and 451
                         #ninth tab content
                         tabItem(tabName = "Impressum",
